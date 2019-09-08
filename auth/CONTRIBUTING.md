@@ -1,4 +1,4 @@
-## NextCache Authentication Server
+# NextCache Authentication Server
 
 ---------------------------------------------
 
@@ -11,7 +11,7 @@ The server is expected to have an HTTP endpoint that listens for user sign-in an
 
 ---------------------------------------------
 
-# Sign in
+## Sign in
 
 ---------------------------------------------
 
@@ -21,7 +21,7 @@ The server is expected to have an HTTP endpoint that listens for user sign-in an
     - Retrieve its details, and compare the received password-hash with the hash in the database
     - If the hashes match, look for the ```login_state``` variable in the user's record
         - If the state is true, send a 'USER_ALREADY_LOGGED_IN' response
-        - If the state is false, check for the ```user_blocked`` variable, and if it is false, set state to true, reset the ```login_attempts``` variable to zero, and send a 'LOGIN_SUCCESSFUL' response along with the user login token that has to be generated and saved afresh in every new login session. If the blocked variable is true, send a 'USER_BLOCKED' response.
+        - If the state is false, check for the ```user_blocked``` variable, and if it is false, set state to true, reset the ```login_attempts``` variable to zero, and send a 'LOGIN_SUCCESSFUL' response along with the user login token that has to be generated and saved afresh in every new login session. If the blocked variable is true, send a 'USER_BLOCKED' response.
     - If the password-hashes do not match, increment the ```login_attempts``` variable, and if it reaches a particular number, defined as MAX_LOGIN_ATTEMPTS, set the ```user_blocked``` variable to true. Also, start a timer that resets the ```user_blocked``` variable to false after a set number of milliseconds specified in COOLDOWN_TIME and send a 'INVALID_AUTH_CRED` response.
 
 - Sign out
@@ -32,7 +32,7 @@ The server is expected to have an HTTP endpoint that listens for user sign-in an
 
 --------------------------------------------
 
-# Sign up
+## Sign up
 
 ---------------------------------------------
 
