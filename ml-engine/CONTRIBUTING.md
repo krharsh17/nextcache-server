@@ -13,6 +13,8 @@ The server is expected to have an HTTP endpoint that listens for ml model access
 
 ### Evaluate
 
+sample cmd request: ```curl http://localhost:8081 -d "login_token E model_name <InputFileReference>"```
+
 - Receive the model name and the input file location from the request.
 - Run the concerned model with the specified data file. If the file does not exist, return a 'NO_INPUT' response.
 - If any error occurs, send a 'EVAL_FAILED' response
