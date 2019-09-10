@@ -5,9 +5,10 @@
 For those wishing to contribute to this section, please read the server design carefully before making a PR.
 
 The server side script has to be written in node.js
+The server side script has to be written using ftp-srv library
 The server port and ip have to be saved in a variable to allow easy modifications
 
-The server is expected to have an HTTP endpoint that listens for database operation calls.
+The server is expected to have an HTTP endpoint that listens for storage operation calls.
 
 ---------------------------------------------
 
@@ -15,7 +16,7 @@ The server is expected to have an HTTP endpoint that listens for database operat
 
 - Receive the object details from the request.
 - Receive the file.
-- Save the file at the specified loaction inside the storage directory
+- Save the file at the specified location inside the storage directory
 - Return a 'UPLOAD_SUCCESSFUL' response if the insertion is successful, or a 'UPLOAD_FAILED' response if the insertion failed.
 
 ### Delete
